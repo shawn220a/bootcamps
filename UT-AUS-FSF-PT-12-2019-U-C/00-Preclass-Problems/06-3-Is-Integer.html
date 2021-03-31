@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Preclass 5-2: First Occurence</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            Write a function that takes in an input and returns true if it’s an integer and false otherwise.
+
+            Ex:
+            Input: "7"
+            Output: false
+
+            Input: 7
+            Output: true
+
+            Input: 4.3
+            Output: false
+        */
+
+        var isIntOne = function (input) {
+	        return parseInt(input) === input;
+        }
+
+        var isIntTwo = function (input) {
+	        return Math.floor(input) === input;
+        }
+
+        console.log("isIntOne");
+        console.log(isIntOne("7"));
+        console.log(isIntOne(7));
+        console.log(isIntOne(4.3));
+
+        console.log("\n\n\nisIntTwo");
+        console.log(isIntTwo("7"));
+        console.log(isIntTwo(7));
+        console.log(isIntTwo(4.3));    
+
+    </script>
+</body>
+</html>

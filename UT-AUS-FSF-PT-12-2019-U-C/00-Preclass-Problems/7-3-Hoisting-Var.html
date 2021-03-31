@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>7-2: Hoisting Var</title>
+</head>
+<body>
+    <script>
+        /*
+            Without running the code, determine what the following code will output and why:
+
+            A: within the inner function variable a is hoisted to the top of the function. When 
+            its hoisted its undefined. Then you attempt to increment "undefined" by 1 by doing a++. Hence you
+            will get an error of NaN which stands for "Not a Number".
+        */
+
+        var a = 1;
+        function outer() {
+            var a = 2;
+
+            function inner() {
+                a++;
+                console.log(a);
+                var a = 5;
+            }
+            inner();
+        }
+        outer();
+        
+    </script>
+</body>
+</html>

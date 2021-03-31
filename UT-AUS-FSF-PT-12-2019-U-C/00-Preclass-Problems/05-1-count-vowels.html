@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Preclass 5-1: Count Vowels</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            Write a function that takes in a string and outputs the number of vowels (not counting y).
+
+            Ex:
+            Input: "hello"
+            Output: 2
+
+            Input: "you are great!"
+            Output: 6
+
+            Input: "why?"
+            Output: 0
+        */
+
+        var countVowelsOne = function(str) {
+
+            // Always consider validation, but I recommend you solve problem before
+            // validating. Remember to always ask interviewer
+            if (typeof(str) !== "string" || str === "") {
+                console.log("invalid input")
+                return 0;
+            }
+
+            var count = 0;
+            var input = str.toLowerCase();
+            for (var i = 0; i < input.length; i++) {
+                if(input[i] === "a" || input[i] === "e" || input[i] === "i" || input[i] === "o" || input[i] === "u"){
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+        var countVowelsTwo = function(str){
+
+            // Always consider validation, but I recommend you solve problem before
+            // validating. Remember to always ask interviewer
+            if (typeof(str) !== "string" || str === "") {
+                console.log("invalid input")
+                return 0;
+            }
+
+            var count = 0;
+            var input = str.toLowerCase();
+            var vowelArr = ["a", "e", "i", "o", "u"];
+
+            for (var i = 0; i < input.length; i++) {
+                if(vowelArr.includes(input[i])) {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+        console.log(countVowelsOne("hello"));
+        console.log(countVowelsTwo("hello"));
+
+        console.log(countVowelsOne("you are great!"));
+        console.log(countVowelsTwo("you are great!"));
+
+        console.log(countVowelsOne("why?"));
+        console.log(countVowelsTwo("why?"));
+
+        console.log(countVowelsOne("hello 4"));
+        console.log(countVowelsTwo("hello 4"));
+
+        console.log(countVowelsOne(4));
+        console.log(countVowelsTwo(""));
+    </script>
+</body>
+</html>

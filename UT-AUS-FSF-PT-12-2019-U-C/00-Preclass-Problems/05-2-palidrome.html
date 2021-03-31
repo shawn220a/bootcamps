@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Preclass 5-2: Palidrome</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            Write a function that takes in a single word as a string and returns true if it’s a palindrome and false otherwise (a palindrome is spelled the same way forwards and backwards).
+
+            Ex:
+            Input: "noon"
+            Output: true
+
+            Input: "horse"
+            Output: false
+
+            Input: "racecar"
+            Output: true
+        */
+
+        var isPalindromeOne = function (str) {
+            for (var begin = 0, end = str.length-1; begin < str.length; begin++, end--) {
+                if (str[begin] !== str[end]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        var isPalindromeTwo = function (str) {
+            return str.split("").reverse().join("") === str;
+        }
+        console.log(isPalindromeOne("noon"));
+        console.log(isPalindromeOne("horse"));
+        console.log(isPalindromeOne("racecar"));
+
+        console.log(isPalindromeTwo("noon"));
+        console.log(isPalindromeTwo("horse"));
+        console.log(isPalindromeTwo("racecar"));
+    </script>
+</body>
+</html>

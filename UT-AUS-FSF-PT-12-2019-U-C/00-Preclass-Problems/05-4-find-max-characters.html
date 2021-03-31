@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function highestCharacterCount(str) {
+            var charCount = {};
+            
+            for (var i = 0; i < str.length; i++) {
+                var char = str[i];
+                if (charCount[char]) {
+                    charCount[char]++;
+                }
+                else {
+                    charCount[char] = 1;
+                }
+            }
+
+            var maxCount = 0;
+            var maxChar = "";
+            for (var key in charCount) {
+                if(maxCount === 0) {
+                    maxCount = charCount[key];
+                    maxChar = key;
+                } else if (maxCount < charCount[key]) {
+                    maxCount = charCount[key];
+                    maxChar = key;
+                }
+            }
+
+            return maxChar + ": occurance_count: " + maxCount;
+        }
+
+        console.log(highestCharacterCount("aabbrrccaaddaabbrraa"));
+        console.log(highestCharacterCount("this hat is the greatest!"));
+
+        // This example max will be the empty space character ' '
+        console.log(highestCharacterCount("what a wonderful day it has been!"));
+    </script>
+</body>
+</html>

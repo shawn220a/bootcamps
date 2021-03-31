@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>7-1: First Duplicate</title>
+</head>
+<body>
+    <script>
+        /*
+            Write a function that takes an array of integers as an input and outputs the first duplicate.
+
+            Ex:
+            Input: [ 2, 5, 6, 3, 5 ]
+            Output: 5
+
+            Input: [ 1, 3, 4, 1, 3, 4 ]
+            Output: 1
+
+            Input: [ 2, 4, 5 ]
+            Output: undefined
+        */
+
+        // Recommended Solution
+        var firstDupOne = function(arr) {
+            var visited = {};
+            for (var i = 0; i < arr.length; i++) {
+                var val = arr[i]
+                if (visited[val]) {
+                    return val;
+                }
+                else{
+                    visited[val] = true;
+                }
+            }
+        }
+
+
+        // The following solution is OK however, it uses nested for loop (2 loops)
+        // The solution above is accomplished using 1 for loop.
+        // We have not talked about performance but this is a topic we will discuss later
+        // in the course.
+        var findDupTwo = function (arr) {
+            for (var i = 0; i < arr.length; i++){
+                for (var j = 0; j < i; j++){
+                    if(arr[i] === arr[j]){
+                        return arr[i];
+                    }
+                } 
+            }
+        }
+
+        console.log("findDupOne Solution:")
+        console.log(firstDupOne([ 2, 5, 6, 3, 5 ]));
+        console.log(firstDupOne([ 1, 3, 4, 1, 3, 4 ]));
+        console.log(firstDupOne([ 2, 4, 5 ]));
+
+        console.log("\n\n\nfindDupTwo Solution:");
+        console.log(findDupTwo([ 2, 5, 6, 3, 5 ]));
+        console.log(findDupTwo([ 1, 3, 4, 1, 3, 4 ]));
+        console.log(findDupTwo([ 2, 4, 5 ]));
+    </script>
+</body>
+</html>

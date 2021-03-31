@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+      .myclass {
+        width: 100%;
+      }
+
+      /* Greater than 980px, Desktop */
+      @media screen and (min-width:980px) {
+          .myclass {
+              color: red;
+          }
+      }
+
+      /* Greater than 641px and less than 979px, Tablet */
+      @media (min-width:641px) and (max-width:979px) {
+          .myclass {
+              color: blue;
+          }
+      }
+
+      /* Less than 640px, Mobile */
+      @media screen and (max-width:640px) {
+        .myclass {
+              color: yellow;
+        }
+      }
+    </style>
+
+    <title>Media Query Example</title>
+  </head>
+  <body>
+    
+    <p class="myclass">Lorem ipsum dolor sit amet.</p>
+    
+  </body>
+</html>
