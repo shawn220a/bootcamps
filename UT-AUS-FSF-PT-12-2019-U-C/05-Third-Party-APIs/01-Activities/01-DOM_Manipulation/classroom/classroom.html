@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .hide {
+            display: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+    </main>
+    
+    <script src="classrooms.js"></script>
+    <script>
+
+        // Main is predifined in html DOM. We will use this as a delagator
+        // Whats delagate? We will assign a on click listner to the main element
+        // Then add logic to delegate desired child element
+        var main = document.querySelector("main");
+
+        var currentClassroom = 0; // Current Class Room to display
+
+        var renderClassrooms = function() {
+
+           main.innerHTML = "";
+
+            bigList.forEach(function(list, indexClassroom) {
+                var div = document.createElement("div");
+
+                // If item isn't current classroom then hide it!
+                if(currentClassroom != indexClassroom) {
+                    div.setAttribute("class", "hide");
+                }
+
+                // Create h1
+                var hOne = document.createElement("h1");
+                hOne.textContent = "Instructor: " + list.name;
+
+                // Create ul
+                var ul = document.createElement("ul");
+
+                // Create li tags
+                list.TAs.forEach(function(taName) {
+                    var li = document.createElement("li");
+                    li.textContent = taName;
+
+                    var button = document.createElement("button");
+                    button.textContent = "click here";
+
+                    li.append(button);
+
+                    // append li to ul tag
+                    ul.append(li);
+                });
+
+                // Append h1 to div
+                div.append(hOne);
+
+                // append ul to div
+                div.append(ul);
+
+                // append div (which  now has the h1 and ul) to main element
+                main.append(div);
+            });
+
+        }
+
+
+        // Initial - ender classrooms
+        renderClassrooms();
+
+
+        // Use delegator strategy, have event listener on predefined element main
+        // wait for clicks on main element
+        main.addEventListener("click", function(event) {
+
+            var targetedClick = event.target;
+            
+            // Only target li tags to proceed to next classroom
+            if(targetedClick.matches("button")) {
+
+                console.log(targetedClick.textContent);
+                currentClassroom++;
+                renderClassrooms();
+
+            }
+        });
+    </script>
+</body>
+</html>

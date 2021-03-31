@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Fido",
+    "species": "dog",
+    "age": 2,
+    "gender": "M"
+  },
+  {
+    "name": "Wally",
+    "species": "dog",
+    "age": 6,
+    "gender": "M"
+  },
+  {
+    "name": "Penny",
+    "species": "dog",
+    "age": 1,
+    "gender": "F"
+  },
+  {
+    "name": "Bandit",
+    "species": "dog",
+    "age": 7,
+    "gender": "M"
+  },
+  {
+    "name": "Loki",
+    "species": "dog",
+    "age": 5,
+    "gender": "M"
+  }
+]

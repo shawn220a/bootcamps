@@ -1,0 +1,22 @@
+{
+  "name": "npm-init",
+  "version": "1.0.0",
+  "description": "The solution to the `npm init` activity.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/username/repo.git"
+  },
+  "keywords": [
+    "--save"
+  ],
+  "author": "You!",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/username/repo/issues"
+  },
+  "homepage": "https://github.com/username/repo#readme"
+}
